@@ -40,7 +40,7 @@ function validate()
         pwd.value='';
         flag2=false;
     }
-
+ 
     if(flag1 && flag2){
         return true;
     }

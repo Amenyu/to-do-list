@@ -7,13 +7,13 @@ function getList(){
     xhttp.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200){
             var response=JSON.parse(this.responseText);
-            
+
             const todolist = document.getElementById("todolist");
             todolist.innerHTML=`<div class="container" id="listhead">
                                      <div class="row">
                                           <div class="col-4"> ID </div>
-                                          <div class="col-7"> Title </div>
-                                          <div class="col"> Completed </div>
+                                          <div class="col-6"> Title </div>
+                                          <div class="col-2"> Completed </div>
                                      </div>
                                 </div>`;
             
@@ -37,12 +37,12 @@ function getList(){
 
               const col2=document.createElement("div");
               row.appendChild(col2);
-              col2.className="col-7";
+              col2.className="col-6";
               col2.innerText=response[i].title;
 
               const col3=document.createElement("div");
               row.appendChild(col3);
-              col3.className="col";
+              col3.className="col-2";
               
               if(response[i].completed){
                   col3.innerHTML=`<div class="form-check">
