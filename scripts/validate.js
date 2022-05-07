@@ -1,14 +1,5 @@
-const form=document.getElementById("login-form");
 
-form.addEventListener('submit',function(event){
-    if(!validate())
-    {
-        event.preventDefault();
-    }
-  
-})
-
-function validate()
+function validate(callback)
 {
     let username=document.getElementById("username");
     let pwd=document.getElementById("password");
@@ -23,8 +14,7 @@ function validate()
         username.style.borderColor="red";
         document.getElementById("uname-lbl").innerText="Invalid Username!";
         document.getElementById("uname-lbl").style.color="red";
-        username.value='';
-        
+        username.value=''; 
         flag1=false;
     }
     if(pwd.value=='12345'){
@@ -42,11 +32,12 @@ function validate()
     }
  
     if(flag1 && flag2){
-        return true;
+        callback();
     }
-    else{
-        
+    else{ 
         return false;
     }
   
 }
+
+redirect=()=>window.location.href="todolist.html";
