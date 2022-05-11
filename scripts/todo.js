@@ -21,7 +21,7 @@ displayList=(response)=>{
                            <div class="row">
                                 <div class="col-4"> ID </div>
                                 <div class="col-6"> Title </div>
-                                <div class="col-2"> Completed </div>
+                                <div class="col-2"> Status </div>
                            </div>
                       </div>`;
   
